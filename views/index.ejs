@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Search</title>
+    <link rel="stylesheet" href="./public/index.css">
+</head>
+<body>
+    <header class="header">
+        <div class="company-name">Assignment 3</div>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="/index">Find recipe</a></li>
+                <li><a href="/currency">Currency conversion</a></li>
+                <li><a href="/recipe-history">History</a></li>
+                <li><a href="/login">Log out</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h1>Find a Recipe</h1>
+        <form action="/index" method="post">
+            <input type="text" name="q" placeholder="Enter a dish name">
+            <button type="submit">Search</button>
+        </form>
+        <% if (recipe) { %>
+            <div class="recipe">
+                <h2><%= recipe.label %></h2>
+                <img src="<%= recipe.image %>" alt="<%= recipe.label %>">
+                <ul>
+                    <% recipe.ingredients.forEach(ingredient => { %>
+                        <li><%= ingredient.text %></li>
+                    <% }); %>
+                </ul>
+                <a href="<%= recipe.url %>" target="_blank">View Recipe</a>
+            </div>
+        <% } %>
+        <% if (error) { %>
+            <p class="error"><%= error %></p>
+        <% } %>
+    </div>
+
+    <footer style="display: flex; justify-content: center; align-items: center; width: 100%; height: 70px; background-color: rgb(104, 104, 104);">
+        Aibek Bazarbayev SE-2205
+    </footer>
+</body>
+</html>

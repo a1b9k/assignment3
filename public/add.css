@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Apply space-between to body */
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between; /* Добавьте пространство между заголовком и ссылкой */
+    align-items: center; /* Выровняйте элементы вертикально по центру */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline; /* Сделайте элементы списка в строку */
+    margin-left: 20px; /* Добавьте небольшое пространство между ссылками */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 500px;
+}
+
+aside {
+    width: 25%;
+    background-color: #444;
+    padding: 10px;
+}
+
+aside ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+aside ul li {
+    margin-bottom: 10px;
+}
+
+aside ul li button {
+    width: 100%;
+    padding: 10px;
+    background-color: #666;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+#userForm {
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#userForm label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#userForm input[type="text"],
+#userForm input[type="password"],
+#userForm input[type="checkbox"],
+#userForm input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+
+.a{
+    text-decoration: none;
+    color: white;
+}

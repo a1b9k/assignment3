@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Apply space-between to body */
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between; /* Добавьте пространство между заголовком и ссылкой */
+    align-items: center; /* Выровняйте элементы вертикально по центру */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline; /* Сделайте элементы списка в строку */
+    margin-left: 20px; /* Добавьте небольшое пространство между ссылками */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 500px;
+}
+
+aside {
+    width: 25%;
+    background-color: #444;
+    padding: 10px;
+}
+
+aside ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+aside ul li {
+    margin-bottom: 10px;
+}
+
+aside ul li button {
+    width: 100%;
+    padding: 10px;
+    background-color: #666;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+main {
+    flex: 3; /* Увеличьте ширину основной области */
+    padding: 20px;
+    display: flex; /* Добавьте display: flex для основной области */
+    flex-wrap: wrap; /* Оберните элементы на новую строку при необходимости */
+    gap: 20px; /* Добавьте промежуток между элементами */
+    justify-content: center; /* Центрируйте элементы по горизонтали */
+}
+
+.userCard {
+    width: calc(33.33% - 20px); /* Установите ширину карточки пользователя для 3 колонок */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Медиа-запрос для адаптивности на меньших экранах */
+@media screen and (max-width: 768px) {
+    main {
+        padding: 10px; /* Уменьшите отступы для меньших экранов */
+    }
+
+    .userCard {
+        width: calc(50% - 20px); /* Установите ширину карточки пользователя для 2 колонок */
+    }
+    
+    footer {
+        flex-direction: column; /* Измените направление для мобильных экранов */
+        text-align: center; /* Центрируйте текст в подвале для мобильных экранов */
+    }
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+
+#usersContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.userCard {
+    width: calc(30% - 20px);
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 768px) {
+    #usersContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .userCard {
+        width: calc(80% - 20px);
+    }
+}
+
+.a{
+    text-decoration: none;
+    color: white;
+}

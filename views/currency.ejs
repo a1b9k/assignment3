@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="./public/currency.css">
+</head>
+<body>
+    <header class="header">
+        <div class="company-name">Assignment 3</div>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="/index">Find recipe</a></li>
+                <li><a href="/currency">Currency conversion</a></li>
+                <li><a href="/recipe-history">History</a></li>
+                <li><a href="/login">Log out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Currency Converter</h1>
+    <form action="/currency" method="post">
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" required>
+        <br>
+        <label for="fromCurrency">From Currency:</label>
+        <input type="text" id="fromCurrency" name="fromCurrency" required>
+        <br>
+        <label for="toCurrency">To Currency:</label>
+        <input type="text" id="toCurrency" name="toCurrency" required>
+        <br>
+        <button type="submit">Convert</button>
+    </form>
+
+    <% if (typeof result !== 'undefined') { %>
+        <h2>Result:</h2>
+        <p><%= amount %> <%= fromCurrency %> = <%= result %> <%= toCurrency %></p>
+    <% } %>
+
+    <footer style="display: flex; justify-content: center; align-items: center; width: 100%; height: 70px; background-color: rgb(104, 104, 104);">
+        Aibek Bazarbayev SE-2205
+    </footer>
+</body>
+</html>

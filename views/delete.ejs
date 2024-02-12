@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="./public/delete.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Panel</h1>
+        <nav>
+            <ul>
+                <li><a href="/login" class="a">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <aside>
+            <ul>
+                <li><button><a href="/add" class="a">Add User</a></button></li>
+                <li><button><a href="/update" class="a">Update User</a></button></li>
+                <li><button><a href="/delete" class="a">Delete User</a></button></li>
+            </ul>
+        </aside>
+        <main>
+            <h2>Delete User</h2>
+            <div id="usersContainer">
+                <% users.forEach(user => { %>
+                    <div class="userCard">
+                        <p>Username: <%= user.username %></p>
+                        <p>Password: <%= user.password %></p>
+                        <p>Creation Date: <%= user.creationDate %></p>
+                        <p>Update Date: <%= user.updateDate %></p>
+                        <p>Delete Date: <%= user.deletionDate %></p>
+                        <p>Is Admin: <%= user.isAdmin %></p>
+                        <form action="/delete" method="post">
+                            <input type="text" name="id" value="<%= user._id %>" style="display: none;">
+                            <input type="submit" value="Delete">
+                        </form>
+                    </div>
+                <% }) %>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 Your Company</p>
+    </footer>
+</body>
+</html>

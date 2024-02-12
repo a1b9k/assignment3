@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="./public/add.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Panel</h1>
+        <nav>
+            <ul>
+                <li><a href="/login" class="a">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <aside>
+            <ul>
+                <li><button><a href="/add" class="a">Add User</a></button></li>
+                <li><button><a href="/update" class="a">Update User</a></button></li>
+                <li><button><a href="/delete" class="a">Delete User</a></button></li>
+            </ul>
+        </aside>
+        <main>
+            <div id="userForm">
+                <h2>User Form</h2>
+                <form action="/add" method="post">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password">
+                    <label for="isAdmin">Is Admin:</label>
+                    <input type="checkbox" id="isAdmin" name="isAdmin">
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 Your Company</p>
+    </footer>
+</body>
+</html>

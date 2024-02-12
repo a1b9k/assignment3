@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="./public/add.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Panel</h1>
+        <nav>
+            <ul>
+                <li><a href="/login" class="a">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <aside>
+            <ul>
+                <li><button><a href="/add" class="a">Add User</a></button></li>
+                <li><button><a href="/update" class="a">Update User</a></button></li>
+                <li><button><a href="/delete" class="a">Delete User</a></button></li>
+            </ul>
+        </aside>
+        <main>
+            <h2>Update User</h2>
+            <div id="usersContainer">
+                <% users.forEach(user => { %>
+                    <div class="userCard">
+                        <form action="/update" method="post">
+                            <input type="hidden" name="id" value="<%= user._id %>">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" name="username" value="<%= user.username %>">
+                            <label for="password">Password:</label>
+                            <input type="text" id="password" name="password" value="<%= user.password %>">
+                            <label for="isAdmin">Is Admin:</label>
+                            <input type="checkbox" id="isAdmin" name="isAdmin" <% if (user.isAdmin) { %> checked <% } %>>
+                            <input type="submit" value="Update">
+                        </form>
+                    </div>
+                <% }) %>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 Your Company</p>
+    </footer>
+</body>
+</html>
